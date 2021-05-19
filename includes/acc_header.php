@@ -2,8 +2,7 @@
 <?php session_start();
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING &  ~E_STRICT & ~E_DEPRECATED);
  include('includes/session.php');
- 
-  confirm_logged_in();
+ confirm_logged_in();
   $role=$_SESSION['SESS_USER_ROLE'];
    $staff_id=$_SESSION['SESS_USER'];
 include('includes/config2.php');
