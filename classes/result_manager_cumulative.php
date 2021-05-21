@@ -305,10 +305,9 @@ public static function find_grade_by_student_id($s_id, $class,  $subject_name, $
 		if(!$check_sec=mysql_fetch_array(mysql_query("SELECT `section_id` FROM `class_section` WHERE `class_name`='{$class}'"))){
 echo 'error in getting section ID'.mysql_error();
 }
+	$sec_id=$check_sec['section_id'];
 
-   $sec_id=$check_sec['section_id'];
-
-   // pick grading dynamically from the grading table//
+  // pick grading dynamically from the grading table//
    $get_range=mysql_fetch_array(mysql_query("SELECT * FROM `grading` WHERE `section_id`='{$sec_id}'
  AND '{$total}' BETWEEN  `starts` AND `ends` "));
 if(!$get_range){ echo "Error in calculating grade".mysql_error(); exit();}
@@ -324,20 +323,22 @@ if($get_range){
   
    public static function find_remark_by_student_id($s_id, $class,  $subject_name, $total) {
 		
-		if(!$check_sec=mysql_fetch_array(mysql_query("SELECT `section_id` FROM `class_section` WHERE `class_name`='{$class}'"))){
-echo 'error in getting section ID'.mysql_error();
-}
+				if(!$check_sec=mysql_fetch_array(mysql_query("SELECT `section_id` FROM `class_section` WHERE `class_name`='{$class}'"))){
+		echo 'error in getting section ID'.mysql_error();
+		}
 
-   $sec_id=$check_sec['section_id'];
+		   $sec_id=$check_sec['section_id'];
 
-   // pick grading dynamically from the grading table//
-   $get_range=mysql_fetch_array(mysql_query("SELECT * FROM `grading` WHERE `section_id`='{$sec_id}'
- AND '{$total}' BETWEEN  `starts` AND `ends` "));
-if(!$get_range){ echo "Error in calculating remark".mysql_error(); exit();}
-if($get_range){ 
- return $grade=$get_range['descp']; // description//
- 
-}
+		   // pick grading dynamically from the grading table//
+		   $get_range=mysql_fetch_array(mysql_query("SELECT * FROM `grading` WHERE `section_id`='{$sec_id}'
+		 AND '{$total}' BETWEEN  `starts` AND `ends` "));
+		if(!$get_range){
+		 echo "Error in calculating remark".mysql_error(); exit();
+		}
+		if($get_range){ 
+		 return $grade=$get_range['descp']; // description//
+		 
+		}
  
 	}
 	
