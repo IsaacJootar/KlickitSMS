@@ -8,7 +8,7 @@
 
  <?php 
 global $database;
-
+ $term_id=$_POST['term_id'];
  foreach($_POST['other_items'] as $id => $value):
 
  $query="SELECT `expected_to_pay` FROM `acc_school_fees_payments` WHERE `item_name`='{$id}' AND `status`= 0"; 

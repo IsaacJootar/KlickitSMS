@@ -56,8 +56,7 @@ endforeach;
     $pay->item_name='tuition';
 	$pay->have_paid=$_POST['tuition_fee']; 
 	$pay->expected_to_pay=$_POST['tuition_exp']; 
-	$balance=$pay->expected_to_pay  - $pay->have_paid;
-    $pay->balance=$balance;
+	$pay->balance=$_POST['tuition_exp']-$_POST['tuition_fee'];
 	$pay->student_id=$_POST['student_id'];// student_id
 	$pay->bank_name=$_POST['bank_name']; // bank
 	$pay->mop=$_POST['mop'];

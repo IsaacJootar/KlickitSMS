@@ -103,7 +103,7 @@ require_once('classes/schoolInformation.php'); ?>
                          <th>Registration N0.</th>
                           <th> Amount Paid (Tuition Only) </th>
                           <th>Balance (current term)</th>
-                          <th>Balance (cummulative)</th>
+                          <th>Balance (cummulative terms)</th>
                           
                           <th>Payment Status</th>
                        </tr>

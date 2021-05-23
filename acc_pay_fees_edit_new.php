@@ -14,7 +14,7 @@
   </script>
 <?php 
 
- $id = $_GET['id']; //db id
+ $term_id = $_GET['term']; 
  $student_id = $_GET['student_id'];
 $query="SELECT `fullname` , `student_id`, `class_name` FROM `student_class` WHERE `student_id`=$student_id AND `status`= 1 AND `account_status`=0"; 
    $result=$database->query($query);
@@ -75,6 +75,7 @@ echo "</select>" . '</br>'. '</br>';
                      <div class="input-group col-md-4"> <span class="input-group-addon">Teller Number</span>
                       <input type="text" name="teller_no"  value="<?php  echo $fees['teller_no']; ?>" placeholder="enter teller" class="form-control"/>
                     </div></br>
+                      <input name="term_id" type='hidden'  value="<?php  echo $term_id; ?>" />
                     <div align="center" class="alert alert-info">Update other school fees  items</div>
           
 <?php

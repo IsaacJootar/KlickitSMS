@@ -8,10 +8,10 @@
 
  <?php 
 global $database;
-
+ $term_id=$_POST['term_id'];
  foreach($_POST['other_items'] as $id => $value):
 
- $query="SELECT `expected_to_pay` FROM `acc_school_fees_payments` WHERE `item_name`='{$id}' AND `status`= 1"; 
+ $query="SELECT `expected_to_pay` FROM `acc_school_fees_payments` WHERE `item_name`='{$id}' AND `status`= 1 AND `sess_id`='{$sess_id}' AND `term_id`='{$term_id}'"; 
  $result=$database->query($query);
     if (!$result){
       die("database query faild");
@@ -43,7 +43,7 @@ endforeach;
 // tuition fee/ let it fall in this order for now
     $item_name='tuition';
 	$tuition_fee=$_POST['tuition_fee'];
-    $query="SELECT `expected_to_pay` FROM `acc_school_fees_payments` WHERE `item_name`='{$item_name}' AND `status`= 1"; 
+    $query="SELECT `expected_to_pay` FROM `acc_school_fees_payments` WHERE `item_name`='{$item_name}' AND `status`= 1 AND `sess_id`='{$sess_id}' AND `term_id`='{$term_id}'"; 
     $result=$database->query($query);
     if (!$result){
       die("database query faild");

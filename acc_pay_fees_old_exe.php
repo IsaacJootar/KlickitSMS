@@ -27,6 +27,8 @@ $check_config=$database->query("SELECT * FROM `acc_configure_tuition_fees` WHERE
 		exit();
 	}
 
+	// other items should come first, in this order//
+
  foreach($_POST['other_items'] as $id => $value):
 	$pay=new accountschoolFees();
 	$pay->item_name=$id;
@@ -56,6 +58,7 @@ endforeach;
     $pay->item_name='tuition';
 	$pay->have_paid=$_POST['tuition_fee']; 
 	$pay->expected_to_pay=$_POST['tuition_exp']; 
+    $pay->balance=$_POST['tuition_exp']-$_POST['tuition_fee'];
 	$pay->student_id=$_POST['student_id'];// student_id
 	$pay->bank_name=$_POST['bank_name']; // bank
     $pay->mop=$_POST['mop'];

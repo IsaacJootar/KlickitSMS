@@ -114,13 +114,12 @@ $query2="SELECT `id`, `student_id`, `teller_no` FROM `acc_school_fees_payments` 
      $query2=$database->query($query2);
      if($result2=$database->num_rows($query2) > 0){
      $result2=$database->fetch_array($query2);
-     echo "<a target='_blank'  href=\"acc_pay_fees_print_receipt.php?student_id=".urlencode($student_id)."&&sess=".urlencode($_SESSION['sess_id'])."&&term=".urlencode($_SESSION['term_id'])."\"><i class='glyphicon glyphicon-print'
-                                ></i>  receipt </a>"; echo '   ';
-                             
-        echo "<a  href=\"acc_pay_fees_edit_new.php?id=".(urlencode($result2['id']))."&&student_id=".urlencode(($result2['student_id']))."\"><i class='glyphicon glyphicon-edit'
+      echo "<a target='_blank'  href=\"acc_pay_fees_print_receipt.php?student_id=".urlencode($student_id)."&&sess=".urlencode($_SESSION['sess_id'])."&&term=".urlencode($_SESSION['term_id'])."\"><i class='glyphicon glyphicon-print'
+                                ></i>  receipt </a>"; echo '   ';                      
+        echo "<a  href=\"acc_pay_fees_edit_new.php?term=".(urlencode($_SESSION['term_id']))."&&sess=".urlencode($_SESSION['sess_id'])."&&student_id=".urlencode(($result2['student_id']))."\"><i class='glyphicon glyphicon-edit'
                                 ></i>  update</a>"; echo '   ';
            
-                                 echo "<a  href=\"acc_delete_fees_new.php?id=".urlencode(($result2['student_id']))."\"><i class='glyphicon glyphicon-trash'
+                                 echo "<a  href=\"acc_delete_fees_new.php?term=".(urlencode($_SESSION['term_id']))."&&sess=".urlencode($_SESSION['sess_id'])."&&student_id=".urlencode(($result2['student_id']))."\"><i class='glyphicon glyphicon-trash'
                                 ></i>  delete</a>";
          
      } else { echo '';};

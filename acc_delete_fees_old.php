@@ -9,6 +9,8 @@
 	$student_id=$_GET['id'];
 	//del session
 	global $database;
+	 $sess_id = $_GET['sess'];
+	 $term_id = $_GET['term'];
 	if($database->query("DELETE FROM `acc_school_fees_payments` 
 		WHERE `sess_id`='{$sess_id}' 
  		AND  `term_id`= '{$term_id}' 
