@@ -1,4 +1,4 @@
-# [Klickitsms - is a simplified software tool for schools and colleges."  ](https://vinehousegroup.com)
+# [Klickitsms - is a simplified software tool for schools and colleges.  ](https://vinehousegroup.com)
 
 
 **Klickitsms** Klickitsms is a all-in-one school management software to solve the numerous challenges schools are facing.
