@@ -15,6 +15,6 @@ It automates school activities  From academics to finances and more.
 
 ## Written In
 
-PHP
+PHP (version 1.3) currently now in version 4.1.7
 
 
